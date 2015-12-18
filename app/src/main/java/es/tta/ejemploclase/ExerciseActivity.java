@@ -69,7 +69,16 @@ public class ExerciseActivity extends AppCompatActivity {
     }
 
     public void recordAudio(View view){
+        if(!getPackageManager().hasSystemFeature(PackageManager.FEATURE_MICROPHONE))
+            Toast.makeText(this, R.string.no_camera, Toast.LENGTH_SHORT).show();
+        else{
+            Intent intent=new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
+            if(intent.resolveActivity(getPackageManager())!=null)
+                startActivityForResult(intent, AUDIO_REQUEST_CODE);
+            else
+                Toast.makeText(this, R.string.no_app, Toast.LENGTH_SHORT).show();
 
+        }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
