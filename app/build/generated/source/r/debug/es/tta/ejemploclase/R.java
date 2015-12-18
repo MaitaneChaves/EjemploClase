@@ -2227,15 +2227,17 @@ containing a value of this type.
         public static final int dni_edit=0x7f060016;
         public static final int leccion_info=0x7f060017;
         public static final int menu_login=0x7f060018;
-        public static final int passwd_edit=0x7f060019;
-        public static final int passwd_label=0x7f06001a;
-        public static final int pregunta_test=0x7f06001b;
-        public static final int status_bar_notification_info_overflow=0x7f06001c;
-        public static final int title_activity_exercise=0x7f06001d;
-        public static final int title_activity_main=0x7f06001e;
-        public static final int title_activity_menu=0x7f06001f;
-        public static final int title_activity_test=0x7f060020;
-        public static final int user=0x7f060021;
+        public static final int no_app=0x7f060019;
+        public static final int no_camera=0x7f06001a;
+        public static final int passwd_edit=0x7f06001b;
+        public static final int passwd_label=0x7f06001c;
+        public static final int pregunta_test=0x7f06001d;
+        public static final int status_bar_notification_info_overflow=0x7f06001e;
+        public static final int title_activity_exercise=0x7f06001f;
+        public static final int title_activity_main=0x7f060020;
+        public static final int title_activity_menu=0x7f060021;
+        public static final int title_activity_test=0x7f060022;
+        public static final int user=0x7f060023;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f080075;

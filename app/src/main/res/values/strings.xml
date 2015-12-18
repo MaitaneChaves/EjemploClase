@@ -14,4 +14,6 @@
     <string name="pregunta_test">¿Cual de las siguientes opciones NO se indica en el fichero de manifiesto de la app?</string>
     <string name="button_send">ENVIAR</string>
     <string name="title_activity_exercise">ExerciseActivity</string>
+    <string name="no_camera">No hay cámara</string>
+    <string name="no_app">No hay app que utilice la cámara</string>
 </resources>
