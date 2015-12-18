@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">EjemploClase</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="user">Usuario</string>
+    <string name="dni_edit">Introduce DNI</string>
+    <string name="passwd_label">Contraseña</string>
+    <string name="passwd_edit">Introduce passwd</string>
+    <string name="btn_acceder">ACCEDER</string>
+    <string name="menu_login">Bienvenida Maitane Chaves</string>
+    <string name="leccion_info">Leccion 1: Introducción a Android</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="pregunta_test">¿Cual de las siguientes opciones NO se indica en el fichero de manifiesto de la app?</string>
+    <string name="button_send">ENVIAR</string>
+    <string name="title_activity_exercise">ExerciseActivity</string>
+</resources>
