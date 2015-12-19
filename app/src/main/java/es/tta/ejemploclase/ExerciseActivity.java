@@ -80,6 +80,13 @@ public class ExerciseActivity extends AppCompatActivity {
 
         }
     }
+    public void sendFile(View view){
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("*/*");
+        startActivityForResult(intent,READ_REQUEST_CODE);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(resultCode!= Activity.RESULT_OK)
@@ -88,10 +95,11 @@ public class ExerciseActivity extends AppCompatActivity {
             case READ_REQUEST_CODE:
             case VIDEO_REQUEST_CODE:
             case AUDIO_REQUEST_CODE:
+                //sendFile(data.getData());
                 Toast.makeText(this, "Deberia enviar el video, audio o fichero", Toast.LENGTH_SHORT).show();
                 break;
-                //sendFile(data.getData());
             case PICTURE_REQUEST_CODE:
+                //sendFile(pictureUri);
                 Toast.makeText(this, "Deberia enviar la foto", Toast.LENGTH_SHORT).show();
                 break;
         }

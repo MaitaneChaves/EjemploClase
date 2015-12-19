@@ -18,7 +18,7 @@
     android:orientation="vertical">
 
         <TextView
-            android:text="@string/pregunta_test"
+            android:id="@+id/pregunta_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <RadioGroup
@@ -35,6 +35,14 @@
             android:layout_height="wrap_content"
             android:text="@string/button_send"
             android:onClick="send"/>
+
+        <Button
+            android:id="@+id/button_advice"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button_advice"
+            android:onClick="help"/>
     </LinearLayout>
 
 </RelativeLayout>

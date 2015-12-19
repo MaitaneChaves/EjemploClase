@@ -248,6 +248,7 @@
     <string name="app_name">EjemploClase</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="btn_acceder">ACCEDER</string>
+    <string name="button_advice">Ayuda</string>
     <string name="button_send">ENVIAR</string>
     <string name="dni_edit">Introduce DNI</string>
     <string name="leccion_info">Leccion 1: Introducción a Android</string>
@@ -258,10 +259,10 @@
     <string name="passwd_label">Contraseña</string>
     <string name="pregunta_test">¿Cual de las siguientes opciones NO se indica en el fichero de manifiesto de la app?</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="title_activity_exercise">ExerciseActivity</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_menu">MenuActivity</string>
-    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_exercise">Nuevo Ejercicio</string>
+    <string name="title_activity_main">Home</string>
+    <string name="title_activity_menu">Menú</string>
+    <string name="title_activity_test">Nuevo Test</string>
     <string name="user">Usuario</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
