@@ -1,37 +1,39 @@
 package es.tta.ejemploclase;
 
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+import es.tta.prof.comms.NetworkReceiver;
+
 public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_LOGIN = "es.tta.ejemplo31.login";
     public final static String EXTRA_PASSWD = "es.tta.ejemplo31.passwd";
     public String PREF_LOGIN;
+    public NetworkReceiver receiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        receiver = new NetworkReceiver();
+        this.registerReceiver(receiver, filter);
+
 
         EditText editLogin = (EditText) findViewById(R.id.login);
         String l = loadLogin();
         if (l != null || !l.isEmpty()) {
             editLogin.setText(l);
         }
-
-
-
     }
 
     @Override
@@ -52,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
     public void login (View view) {
@@ -63,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_PASSWD, editPasswd.getText().toString());
         saveLogin(editLogin.getText().toString());
         startActivity(intent);
-
     }
 
 

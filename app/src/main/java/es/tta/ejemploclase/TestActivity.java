@@ -25,24 +25,23 @@ import android.widget.MediaController;
 
 import java.io.IOException;
 
-public class TestActivity extends AppCompatActivity implements View.OnClickListener{
+import es.tta.ejemploclase.model.Test;
+import es.tta.prof.view.AudioPlayer;
+
+public class TestActivity extends ModelActivity implements View.OnClickListener{
 
     protected String advice;
     public LinearLayout layout;
 
     public int AYUDA=0;
-    //public static final int HTML=1;
-    //public static final int VIDEO=2;
-    //public static final int AUDIO=3;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        Test test =data.getTest();
+
 
         TextView pregunta=(TextView)findViewById(R.id.pregunta_test);
         Button enviar =(Button)findViewById(R.id.button_send_test);
