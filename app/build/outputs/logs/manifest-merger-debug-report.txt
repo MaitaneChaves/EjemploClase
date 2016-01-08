@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:2:1-41:12
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:2:1-42:12
 	xmlns:android
 		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -85,10 +85,14 @@ uses-permission#android.permission.INTERNET
 ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:37:5-83
 	android:name
 		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:37:22-64
-uses-permission#android.permission.RECORD_AUDIO
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:38:5-87
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:38:5-95
 	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:38:22-68
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:38:22-76
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:39:5-87
+	android:name
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:39:22-68
 uses-sdk
 INJECTED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:22.2.1] /home/maitane/EjemploClase/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:20:5-43

@@ -1,6 +1,9 @@
 package es.tta.prof.comms;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.util.Base64;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,6 +51,8 @@ public class RestClient {
         return conn;
     }
 
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     public String getString(String path) throws IOException{
         HttpURLConnection conn=null;
         try{
@@ -62,6 +67,7 @@ public class RestClient {
     }
 
     public JSONObject getJson(String path) throws IOException, JSONException{
+        System.out.println(path);
         return new JSONObject(getString(path));
     }
 
@@ -92,6 +98,7 @@ public class RestClient {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.KITKAT)
     public int postJson(final JSONObject json, String path) throws IOException{
         HttpURLConnection conn=null;
         try{
@@ -107,13 +114,5 @@ public class RestClient {
                 conn.disconnect();
         }
     }
-
-
-
-
-
-
-
-
 
 }

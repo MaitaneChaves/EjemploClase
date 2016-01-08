@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import es.tta.prof.comms.NetworkReceiver;
 
@@ -36,34 +37,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
     public void login (View view) {
         Intent intent = new Intent(this, MenuActivity.class);
         EditText editLogin = (EditText) findViewById(R.id.login);
         EditText editPasswd = (EditText) findViewById(R.id.passwd);
         intent.putExtra(EXTRA_LOGIN, editLogin.getText().toString());
         intent.putExtra(EXTRA_PASSWD, editPasswd.getText().toString());
+        Toast.makeText(getApplicationContext(),editLogin.getText().toString() ,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),editPasswd.getText().toString() ,Toast.LENGTH_SHORT).show();
         saveLogin(editLogin.getText().toString());
-        startActivity(intent);
+
+        if(editPasswd.getText().toString().equals("tta")&&editLogin.getText().toString().equals("12345678A"))
+            startActivity(intent);
+
+        else
+            Toast.makeText(getApplicationContext(),"Login erroneo",Toast.LENGTH_SHORT).show();
     }
 
 
@@ -78,4 +66,38 @@ public class MainActivity extends AppCompatActivity {
         editor.putString(PREF_LOGIN, login);
         editor.commit();
     }
+
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        if(receiver!=null)
+            this.unregisterReceiver(receiver);
+    }
 }
+/*
+
+
+
+
+    public void login(View view) {
+
+        EditText passwd = (EditText) findViewById(R.id.passwd);
+        String pwd = passwd.getText().toString();
+
+        //Comprobamos que el password es el correcto
+        if (!pwd.equals("tta")) {
+            Toast.makeText(this, R.string.badPassword, Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(this, MenuActivity.class);
+            EditText editLogin = (EditText) findViewById(R.id.login);
+            putLogin(editLogin.getText().toString());
+            intent.putExtra(EXTRA_LOGIN, editLogin.getText().toString());
+            intent.putExtra(EXTRA_PASSWD, pwd);
+            startActivity(intent);
+        }
+    }
+
+
+}
+
+ */

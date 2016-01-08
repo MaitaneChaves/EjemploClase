@@ -6,9 +6,6 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +29,7 @@ public class TestActivity extends ModelActivity implements View.OnClickListener{
 
     protected String advice;
     public LinearLayout layout;
+    private int correct;
 
     public int AYUDA=0;
 
@@ -40,9 +38,21 @@ public class TestActivity extends ModelActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-        Test test =data.getTest();
+        /*Test test =data.getTest();
+        TextView textWording=(TextView)findViewById(R.id.pregunta_test);
+        textWording.setText(test.getWording());
+        RadioGroup group=(RadioGroup)findViewById(R.id.test_choices);
+        int i=0;
+        for(Test.Choice choice : test.getChoices()){
+            RadioButton radio =new RadioButton(this);
+            radio.setText(choice.getWording());
+            group.addView(radio);
+            if(choice.iscorrect())
+                correct=i;
+            i++;
+        }*/
 
-
+/***************************ANTES DE COMUNICACIONES*******************/
         TextView pregunta=(TextView)findViewById(R.id.pregunta_test);
         Button enviar =(Button)findViewById(R.id.button_send_test);
         RadioGroup respuestas =(RadioGroup)findViewById(R.id.test_choices);
@@ -70,7 +80,7 @@ public class TestActivity extends ModelActivity implements View.OnClickListener{
                 }
             });
             respuestas.addView(radio);
-        }
+        }/**/
     }
 
 
@@ -80,9 +90,26 @@ public class TestActivity extends ModelActivity implements View.OnClickListener{
 
         RadioGroup group = (RadioGroup)findViewById(R.id.test_choices);
 
-        final int correct = 2;
+        int selected = group.getCheckedRadioButtonId();
 
-        enviar.setVisibility(View.GONE);
+        int  choices=group.getChildCount();
+        for(int i=0;i<choices;i++)
+            group.getChildAt(i).setEnabled(false);
+        layout.removeView(findViewById(R.id.button_send_test));
+
+        group.getChildAt(correct).setBackgroundColor(Color.GREEN);
+        if(selected!=correct){
+            group.getChildAt(selected).setBackgroundColor(Color.RED);
+            Toast.makeText(getApplicationContext(), "Has fallado",Toast.LENGTH_SHORT).show();
+            if(advice!=null&&!advice.isEmpty())
+                findViewById(R.id.button_advice).setVisibility(View.VISIBLE);
+        }else
+            Toast.makeText(getApplicationContext(),"¡Correcto!",Toast.LENGTH_SHORT).show();
+
+
+        //final int correct = 2;
+/*^^^^*****************ANTES DE METER COMUNICACIONES**************************/
+       /* enviar.setVisibility(View.GONE);
 
         int choices = group.getChildCount();
         for (int i = 0; i < choices; i++) {
@@ -123,18 +150,17 @@ public class TestActivity extends ModelActivity implements View.OnClickListener{
         }
         else {
             Toast.makeText(getApplicationContext(), "Correcto", Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
     }
 
     public void showHTML(String advice){
-        if(AYUDA==1){
-        //if(advice.substring(0,10).contains("://")){
+        if(advice.substring(0,10).contains("://")){
             Uri uri= Uri.parse(advice);
             Intent intent=new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
         }
-        else if (AYUDA==1){
+        else {
             Toast.makeText(getApplicationContext(), advice, Toast.LENGTH_SHORT).show();
             WebView web=new WebView(this);
             web.loadData(advice, "text/html", null);
@@ -145,7 +171,7 @@ public class TestActivity extends ModelActivity implements View.OnClickListener{
         }
     }
 
-    public void help(View view){
+    public void help(View view){////////////////////////////CAMBIAR HELP
         if(AYUDA==1||AYUDA==2)
             showHTML(advice);
         else if (AYUDA==3)
@@ -200,6 +226,7 @@ public class TestActivity extends ModelActivity implements View.OnClickListener{
         layout.addView(view);
         audio.start();
     }
+
     @Override
     public void onClick(View v) {
 

@@ -7,6 +7,7 @@ public class Exercise {
     private int id;
     private String wording;
 
+
     public int getId(){return id;}
 
     public void setId(int id){this.id=id;}
@@ -15,3 +16,8 @@ public class Exercise {
 
     public void setWording(String wording){this.wording=wording;}
 }
+
+
+
+
+
