@@ -64,19 +64,19 @@ public class Data {
     public Status getStatus(){
         Status status =new Status();
         status.setLesson(bundle.getInt(EXTRA_LESSON));
-        System.out.println(bundle.getInt(EXTRA_LESSON));
+
         status.setUser(bundle.getString(EXTRA_NAME));
-        System.out.println(bundle.getString(EXTRA_NAME));
+
         status.setLessonTitle(bundle.getString(EXTRA_LESSON_TITLE));
-        System.out.println(bundle.getString(EXTRA_LESSON_TITLE));
+
         status.setNextTest(bundle.getInt(EXTRA_NEXT_TEST));
-        System.out.println(bundle.getInt(EXTRA_NEXT_TEST));
+
         status.setUserDni(bundle.getString(EXTRA_USER));
-        System.out.println(bundle.getString(EXTRA_USER));
+
         status.setUserPassword(bundle.getString(EXTRA_PASSWD));
-        System.out.println(bundle.getString(EXTRA_PASSWD));
+
         status.setId(bundle.getInt(EXTRA_ID));
-        System.out.println(bundle.getInt(EXTRA_ID));
+
         return status;
     }
 
@@ -84,10 +84,16 @@ public class Data {
 
         bundle.putInt(EXTRA_LESSON,status.getLesson());
         bundle.putInt(EXTRA_ID,status.getId());
-        bundle.putString(EXTRA_NAME,status.getUser());
+        bundle.putString(EXTRA_NAME, status.getUser());
         bundle.putString(EXTRA_LESSON_TITLE,status.getLessonTitle());
-        bundle.putInt(EXTRA_EXERCISE_ID,status.getNextExercise());
+        bundle.putInt(EXTRA_EXERCISE_ID, status.getNextExercise());
         bundle.putInt(EXTRA_NEXT_TEST,status.getNextTest());
+        System.out.println(bundle.getInt(EXTRA_ID));
+        System.out.println(bundle.getString(EXTRA_PASSWD));
+        System.out.println(bundle.getInt(EXTRA_NEXT_TEST));
+        System.out.println(bundle.getString(EXTRA_LESSON_TITLE));
+        System.out.println(bundle.getString(EXTRA_NAME));
+        System.out.println(bundle.getInt(EXTRA_LESSON));
 
     }
 

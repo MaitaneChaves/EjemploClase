@@ -36,8 +36,9 @@ public class MenuActivity extends ModelActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
-        //Status status=data.getStatus();
+        Intent intent=getIntent();
+        data=new Data(intent.getExtras());
+        Status status=data.getStatus();
 
         System.out.println(name+lessonTitle+lessonNumber+nextExercise+nextTest);
 
@@ -45,9 +46,9 @@ public class MenuActivity extends ModelActivity {
         final TextView menu_login=(TextView)findViewById(R.id.menu_login);
         final TextView lesson_title=(TextView)findViewById(R.id.lesson_title);
 
-        menu_login.setText("Bienvenido " /*+ status.getUser()*/);
+        menu_login.setText("Bienvenido " + status.getUser());
 
-        lesson_title.setText("Lección  " /*+ status.getLesson() + ": " + status.getLessonTitle()*/);
+        lesson_title.setText("Lección  " + status.getLesson() + ": " + status.getLessonTitle());
 
 
 
