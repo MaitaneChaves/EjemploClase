@@ -32,6 +32,7 @@ public class RestClient {
 
     public void setHttpBasicAuth(String user, String passwd){
         String basicAuth = Base64.encodeToString(String.format("%s:%s", user, passwd).getBytes(),Base64.DEFAULT);
+        System.out.println(user+" "+passwd);
         properties.put(AUTH,String.format("Basic %s", basicAuth));
     }
 
@@ -57,18 +58,25 @@ public class RestClient {
         HttpURLConnection conn=null;
         try{
             conn=getConnection(path);
+            System.out.println("ME CONECTO "+ conn.getResponseCode()+" "+conn.getRequestMethod());
             try(BufferedReader br=new BufferedReader(new InputStreamReader(conn.getInputStream()))){
-                return br.readLine();
+                String linea=br.readLine();
+                System.out.println(linea);
+                return linea;
             }
         }finally{
-            if(conn !=null)
+            if(conn !=null) {
+                System.out.println("ME DESCONECTO");
                 conn.disconnect();
+            }
         }
     }
 
     public JSONObject getJson(String path) throws IOException, JSONException{
-        System.out.println(path);
-        return new JSONObject(getString(path));
+        System.out.println("Entro a getJson "+path);
+        JSONObject json=new JSONObject(getString(path));
+        System.out.println("MI JSON ES "+json);
+        return json;
     }
 
     public int postFile(String path, InputStream is, String fileName) throws  IOException{

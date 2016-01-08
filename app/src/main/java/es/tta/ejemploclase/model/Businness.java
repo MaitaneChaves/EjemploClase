@@ -18,8 +18,8 @@ public class Businness {
     private final static String EXTRA_TEST = "es.tta.ejemploclase.test";
     private final RestClient rest;
     private Bundle bundle;
-    public final static String server = "http://u017633.ehu.es:18080/AlumnoTta/rest/tta/";
-
+    public final static String server = "http://u017633.ehu.es:18080/AlumnoTta/rest/tta";
+    private Status s=new Status();
     String pathTest = "getTest?id=%d";
     String pathExercise = "getExercise?id=%d";
     String pathStatus = "getStatus?dni=%s";
@@ -70,6 +70,7 @@ public class Businness {
     }*/
 
     public Exercise getExercise(int id)throws IOException, JSONException{
+        rest.setHttpBasicAuth("12345678A","tta");
         JSONObject json=rest.getJson(String.format(pathExercise,id));
         Exercise exercise=new Exercise();
         exercise.setId(json.getInt("id"));
@@ -90,9 +91,8 @@ public class Businness {
     }
 
     public Status getStatus (String dni, String password) throws IOException, JSONException{
-        JSONObject json = rest.getJson(String.format(server+pathStatus,dni));
-        System.out.println("El json es: "+json.toString());
-        Status s = new Status();
+        rest.setHttpBasicAuth("12345678A","tta");
+        JSONObject json = rest.getJson("getStatus?dni=12345678A");
         s.setId(json.getInt("id"));
         s.setUser(json.getString("user"));
         System.out.println(s.getUser());

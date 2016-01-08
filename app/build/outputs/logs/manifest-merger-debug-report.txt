@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:2:1-42:12
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:2:1-45:12
 	xmlns:android
 		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:2:11-69
 	package
@@ -13,8 +13,32 @@ ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:2:1-42:12
 	android:versionCode
 		INJECTED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml
 		INJECTED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:5:5-97
+	android:name
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:5:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:6:5-96
+	android:name
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:6:22-77
+uses-permission#android.permission.INTERNET
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:7:5-83
+	android:name
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:7:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:8:5-95
+	android:name
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:8:22-76
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:9:5-87
+	android:name
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:9:22-68
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:10:5-92
+	android:name
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:10:22-73
 application
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:5:5-33:19
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:12:5-40:19
 MERGED from [com.android.support:appcompat-v7:22.2.1] /home/maitane/EjemploClase/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] /home/maitane/EjemploClase/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:22.2.1] /home/maitane/EjemploClase/app/build/intermediates/exploded-aar/com.android.support/design/22.2.1/AndroidManifest.xml:22:5-20
@@ -22,77 +46,57 @@ MERGED from [com.android.support:appcompat-v7:22.2.1] /home/maitane/EjemploClase
 MERGED from [com.android.support:support-v4:22.2.1] /home/maitane/EjemploClase/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:22.2.1] /home/maitane/EjemploClase/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/AndroidManifest.xml:22:5-20
 	android:supportsRtl
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:8:9-41
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:15:9-41
 	android:allowBackup
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:13:9-35
 	android:icon
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:7:9-43
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:14:9-43
 	android:theme
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:10:9-40
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:17:9-40
 activity#es.tta.ejemploclase.MainActivity
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:11:9-20:20
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:18:9-27:20
 	android:label
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:13:13-45
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:20:13-45
 	android:theme
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:14:13-56
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:21:13-56
 	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:12:13-41
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:19:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:15:13-19:29
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:16:17-69
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:16:25-66
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:18:17-77
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:18:27-74
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:25:27-74
 activity#es.tta.ejemploclase.MenuActivity
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:21:9-24:59
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:28:9-31:59
 	android:label
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:23:13-56
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:30:13-56
 	android:theme
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:24:13-56
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:31:13-56
 	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:22:13-41
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:29:13-41
 activity#es.tta.ejemploclase.TestActivity
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:25:9-28:59
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:32:9-35:59
 	android:label
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:27:13-56
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:34:13-56
 	android:theme
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:28:13-56
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:35:13-56
 	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:26:13-41
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:33:13-41
 activity#es.tta.ejemploclase.ExerciseActivity
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:29:9-32:68
+ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:36:9-39:68
 	android:label
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:31:13-60
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:38:13-60
 	android:theme
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:32:13-56
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:39:13-56
 	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:30:13-45
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:35:5-97
-	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:35:22-78
-uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:36:5-96
-	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:36:22-77
-uses-permission#android.permission.INTERNET
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:37:5-83
-	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:37:22-64
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:38:5-95
-	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:38:22-76
-uses-permission#android.permission.RECORD_AUDIO
-ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:39:5-87
-	android:name
-		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:39:22-68
+		ADDED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml:37:13-45
 uses-sdk
 INJECTED from /home/maitane/EjemploClase/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:22.2.1] /home/maitane/EjemploClase/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/AndroidManifest.xml:20:5-43

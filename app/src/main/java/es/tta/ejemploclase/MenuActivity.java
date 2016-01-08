@@ -8,59 +8,50 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
 import es.tta.ejemploclase.model.Businness;
 import es.tta.ejemploclase.model.Status;
+import es.tta.ejemploclase.presentation.Data;
 import es.tta.prof.comms.RestClient;
+import es.tta.prof.view.ProgressTask;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends ModelActivity {
 
-    String server = "http://u017633.ehu.es:18080/AlumnoTta/rest/tta/";
+    private String dni, pass;
+    private TextView userView, lessonView;
+    private JSONObject s;
+    private String name, lessonNumber, lessonTitle;
+    private int nextTest, nextExercise;
+    private Data data;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        data=new Data(savedInstanceState);
+        Status status=data.getStatus();
 
-        final Intent intent = getIntent();
+        System.out.println(name+lessonTitle+lessonNumber+nextExercise+nextTest);
 
-        final RestClient rest = new RestClient("http://u017633.ehu.eus:18080/AlumnoTta/rest/tta/");
-        rest.setHttpBasicAuth("12345678A", "tta");
 
-        new Thread(new Runnable() {
-            public void run()
-            {
+        final TextView menu_login=(TextView)findViewById(R.id.menu_login);
+        final TextView lesson_title=(TextView)findViewById(R.id.lesson_title);
 
-            try
-            {
-                Businness businness=new Businness(rest);
-                final Status s = businness.getStatus(intent.getStringExtra(MainActivity.EXTRA_LOGIN), intent.getStringExtra(MainActivity.EXTRA_PASSWD));
-                                final TextView menu_login=(TextView)findViewById(R.id.menu_login);
-                final TextView lesson_title=(TextView)findViewById(R.id.lesson_title);
-                menu_login.post(new Runnable() {
-                    public void run() {
+        menu_login.setText("Bienvenido " + status.getUser());
 
-                        menu_login.setText("Bienvenido " + s.getUser());
-                    }
-                });
+        lesson_title.setText("Lección  " + status.getLesson() + ": " + status.getLessonTitle());
 
-                lesson_title.post(new Runnable()
-                {
-                    public void run()
-                    {
 
-                        lesson_title.setText("Lección  " + s.getLesson() + ": " + s.getLessonTitle());
-                    }
-                });
 
-            } catch (IOException e) {
-            } catch (JSONException e) {
-            }
-            }
-        }).start();
+
     }
 
 
