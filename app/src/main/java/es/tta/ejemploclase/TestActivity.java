@@ -90,9 +90,9 @@ public class TestActivity extends ModelActivity implements View.OnClickListener{
 
         RadioGroup group = (RadioGroup)findViewById(R.id.test_choices);
 
-        int selected = group.getCheckedRadioButtonId();
+        //int selected = group.getCheckedRadioButtonId();
 
-        int  choices=group.getChildCount();
+        /*int  choices=group.getChildCount();
         for(int i=0;i<choices;i++)
             group.getChildAt(i).setEnabled(false);
         layout.removeView(findViewById(R.id.button_send_test));
@@ -104,12 +104,13 @@ public class TestActivity extends ModelActivity implements View.OnClickListener{
             if(advice!=null&&!advice.isEmpty())
                 findViewById(R.id.button_advice).setVisibility(View.VISIBLE);
         }else
-            Toast.makeText(getApplicationContext(),"¡Correcto!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"¡Correcto!",Toast.LENGTH_SHORT).show();*/
 
 
-        //final int correct = 2;
+        //
 /*^^^^*****************ANTES DE METER COMUNICACIONES**************************/
-       /* enviar.setVisibility(View.GONE);
+        final int correct = 2;
+        enviar.setVisibility(View.GONE);
 
         int choices = group.getChildCount();
         for (int i = 0; i < choices; i++) {
@@ -150,7 +151,7 @@ public class TestActivity extends ModelActivity implements View.OnClickListener{
         }
         else {
             Toast.makeText(getApplicationContext(), "Correcto", Toast.LENGTH_SHORT).show();
-        }*/
+        }
 
     }
 

@@ -67,10 +67,9 @@ public class MainActivity extends ModelActivity {
                 @Override
                 protected es.tta.ejemploclase.model.Status work() throws Exception {
                     s = bus.getStatus("12345678A", "tta");
-                    System.out.println("TENGO EL JSON EN MAIN ACTIVITY");
-                    //Toast.makeText(getApplicationContext(), "TENGO EL JSON", Toast.LENGTH_SHORT).show();
+                    //System.out.println("TENGO EL JSON EN MAIN ACTIVITY");
                     return s;
-                    //rest.getJson("http://u017633.ehu.eus:18080/AlumnoTta/rest/tta/getStatus?dni=12345678A");
+
                 }
 
                 @Override
